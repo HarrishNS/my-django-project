@@ -1,0 +1,19 @@
+<!-- posts/templates/posts/post_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post List</title>
+</head>
+<body>
+    <h1>All Posts</h1>
+    {% for post in object_list %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <small>By {{ post.user.username }}</small>
+        </div>
+    {% empty %}
+        <p>No posts available.</p>
+    {% endfor %}
+</body>
+</html>
